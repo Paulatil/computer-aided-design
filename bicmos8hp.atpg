@@ -1,0 +1,2754 @@
+//******************************************************
+//
+// DFT Library for the Asic Design Kit (ADK)
+//
+// 3.0 New cells added   Jan 2005
+//
+// Copyright 2002 Mentor Graphics Corporation 2001 All Rights Reserved.
+// THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+// WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+// LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+//
+// DISCLAIMER OF WARRANTY:  Unless otherwise agreed in writing,
+// Mentor Graphics software and associated files are provided "as is"
+// and without warranty.  Mentor Graphics has no obligation to support
+// or otherwise maintain software.  Mentor Graphics makes no warranties,
+// express or implied with respect to software including any warranty
+// of merchantability or fitness for a particular purpose.
+//
+// LIMITATION OF LIABILITY: Mentor Graphics is not liable for any property
+// damage, personal injury, loss of profits, interruption of business, or for
+// any other special, consequential or incidental damages, however caused,
+// whether for breach of warranty, contract, tort (including negligence),
+// strict liability or otherwise. In no event shall Mentor Graphics'
+// liability exceed the amount paid for the product giving rise to the claim.
+//
+//******************************************************
+
+//DECAP_C
+//FGTIE       RESISTOR BETWEEN INPUT A FLOATING DIFFUSION
+//FILL1       EMPTY FILLER CELLS
+//FILL2
+//FILL4
+//FILL8
+//FILL16
+//FILL32
+//FILL64
+//FILL128
+//NWSX        N-WELL CONTACT
+
+model ADDF_B(A, B, CIN, SUM, COUT) (
+  input(A, B, CIN) ()
+  output(SUM) (primitive = _xor(A, B, CIN, SUM);)
+  intern(INT_RES_0) (primitive = _and(A, B, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(A, CIN, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(B, CIN, INT_RES_2);)
+  output(COUT) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, COUT);)
+)
+
+model ADDF_C(A, B, CIN, SUM, COUT) (
+  input(A, B, CIN) ()
+  output(SUM) (primitive = _xor(A, B, CIN, SUM);)
+  intern(INT_RES_0) (primitive = _and(A, B, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(A, CIN, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(B, CIN, INT_RES_2);)
+  output(COUT) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, COUT);)
+)
+
+model ADDF_D(A, B, CIN, SUM, COUT) (
+  input(A, B, CIN) ()
+  output(SUM) (primitive = _xor(A, B, CIN, SUM);)
+  intern(INT_RES_0) (primitive = _and(A, B, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(A, CIN, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(B, CIN, INT_RES_2);)
+  output(COUT) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, COUT);)
+)
+
+model ADDF_E(A, B, CIN, SUM, COUT) (
+  input(A, B, CIN) ()
+  output(SUM) (primitive = _xor(A, B, CIN, SUM);)
+  intern(INT_RES_0) (primitive = _and(A, B, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(A, CIN, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(B, CIN, INT_RES_2);)
+  output(COUT) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, COUT);)
+)
+
+model ADDF_F(A, B, CIN, SUM, COUT) (
+  input(A, B, CIN) ()
+  output(SUM) (primitive = _xor(A, B, CIN, SUM);)
+  intern(INT_RES_0) (primitive = _and(A, B, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(A, CIN, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(B, CIN, INT_RES_2);)
+  output(COUT) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, COUT);)
+)
+
+model AND2_B(A, B, Z) (
+   cell_type = AND;
+  input(A, B) ()
+  output(Z) (primitive = _and(A, B, Z);)
+)
+
+model AND2_C(A, B, Z) (
+   cell_type = AND;
+  input(A, B) ()
+  output(Z) (primitive = _and(A, B, Z);)
+)
+
+model AND2_D(A, B, Z) (
+   cell_type = AND;
+  input(A, B) ()
+  output(Z) (primitive = _and(A, B, Z);)
+)
+
+model AND2_E(A, B, Z) (
+   cell_type = AND;
+  input(A, B) ()
+  output(Z) (primitive = _and(A, B, Z);)
+)
+
+model AND2_F(A, B, Z) (
+   cell_type = AND;
+  input(A, B) ()
+  output(Z) (primitive = _and(A, B, Z);)
+)
+
+model AND2_H(A, B, Z) (
+   cell_type = AND;
+  input(A, B) ()
+  output(Z) (primitive = _and(A, B, Z);)
+)
+
+model AND2_I(A, B, Z) (
+   cell_type = AND;
+  input(A, B) ()
+  output(Z) (primitive = _and(A, B, Z);)
+)
+
+model AND2_J(A, B, Z) (
+   cell_type = AND;
+  input(A, B) ()
+  output(Z) (primitive = _and(A, B, Z);)
+)
+
+model AND2_K(A, B, Z) (
+   cell_type = AND;
+  input(A, B) ()
+  output(Z) (primitive = _and(A, B, Z);)
+)
+
+model AND3_B(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _and(A, B, C, Z);)
+)
+
+model AND3_C(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _and(A, B, C, Z);)
+)
+
+model AND3_D(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _and(A, B, C, Z);)
+)
+
+model AND3_E(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _and(A, B, C, Z);)
+)
+
+model AND3_F(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _and(A, B, C, Z);)
+)
+
+model AND3_H(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _and(A, B, C, Z);)
+)
+
+model AND3_I(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _and(A, B, C, Z);)
+)
+
+model AND3_J(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _and(A, B, C, Z);)
+)
+
+model AND3_K(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _and(A, B, C, Z);)
+)
+
+model AND4_B(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _and(A, B, C, D, Z);)
+)
+
+model AND4_C(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _and(A, B, C, D, Z);)
+)
+
+model AND4_D(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _and(A, B, C, D, Z);)
+)
+
+model AND4_E(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _and(A, B, C, D, Z);)
+)
+
+model AND4_F(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _and(A, B, C, D, Z);)
+)
+
+model AND4_H(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _and(A, B, C, D, Z);)
+)
+
+model AND4_I(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _and(A, B, C, D, Z);)
+)
+
+model AND4_J(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _and(A, B, C, D, Z);)
+)
+
+model AO21_B(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _or(INT_RES_0, B, Z);)
+)
+
+model AO21_C(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _or(INT_RES_0, B, Z);)
+)
+
+model AO21_D(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _or(INT_RES_0, B, Z);)
+)
+
+model AO21_E(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _or(INT_RES_0, B, Z);)
+)
+
+model AO21_F(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _or(INT_RES_0, B, Z);)
+)
+
+model AO21_H(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _or(INT_RES_0, B, Z);)
+)
+
+model AO21_I(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _or(INT_RES_0, B, Z);)
+)
+
+model AO21_J(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _or(INT_RES_0, B, Z);)
+)
+
+model AO21_K(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _or(INT_RES_0, B, Z);)
+)
+
+model AO22_B(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO22_C(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO22_D(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO22_E(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO22_F(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO22_H(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO22_I(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO22_J(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO22_K(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO33_C(A1, A2, A3, B1, B2, B3, Z) (
+  input(A1, A2, A3, B1, B2, B3) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO33_E(A1, A2, A3, B1, B2, B3, Z) (
+  input(A1, A2, A3, B1, B2, B3) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO33_H(A1, A2, A3, B1, B2, B3, Z) (
+  input(A1, A2, A3, B1, B2, B3) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO44_C(A1, A2, A3, A4, B1, B2, B3, B4, Z) (
+  input(A1, A2, A3, A4, B1, B2, B3, B4) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, A4, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, B4, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO44_E(A1, A2, A3, A4, B1, B2, B3, B4, Z) (
+  input(A1, A2, A3, A4, B1, B2, B3, B4) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, A4, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, B4, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO44_H(A1, A2, A3, A4, B1, B2, B3, B4, Z) (
+  input(A1, A2, A3, A4, B1, B2, B3, B4) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, A4, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, B4, INT_RES_1);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AO222_B(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model AO222_C(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model AO222_D(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model AO222_E(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model AO222_F(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model AO222_H(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model AO2222_B(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _and(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model AO2222_C(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _and(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model AO2222_D(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _and(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model AO2222_E(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _and(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model AO2222_F(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _and(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model AO2222_H(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _and(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _or(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model AOI21_A(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nor(INT_RES_0, B, Z);)
+)
+
+model AOI21_B(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nor(INT_RES_0, B, Z);)
+)
+
+model AOI21_C(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nor(INT_RES_0, B, Z);)
+)
+
+model AOI21_D(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nor(INT_RES_0, B, Z);)
+)
+
+model AOI21_E(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nor(INT_RES_0, B, Z);)
+)
+
+model AOI21_F(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nor(INT_RES_0, B, Z);)
+)
+
+model AOI21_H(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nor(INT_RES_0, B, Z);)
+)
+
+model AOI22_A(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI22_B(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI22_C(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI22_E(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI22_F(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI22_H(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI33_C(A1, A2, A3, B1, B2, B3, Z) (
+  input(A1, A2, A3, B1, B2, B3) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI33_E(A1, A2, A3, B1, B2, B3, Z) (
+  input(A1, A2, A3, B1, B2, B3) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI33_H(A1, A2, A3, B1, B2, B3, Z) (
+  input(A1, A2, A3, B1, B2, B3) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI44_C(A1, A2, A3, A4, B1, B2, B3, B4, Z) (
+  input(A1, A2, A3, A4, B1, B2, B3, B4) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, A4, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, B4, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI44_E(A1, A2, A3, A4, B1, B2, B3, B4, Z) (
+  input(A1, A2, A3, A4, B1, B2, B3, B4) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, A4, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, B4, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI44_H(A1, A2, A3, A4, B1, B2, B3, B4, Z) (
+  input(A1, A2, A3, A4, B1, B2, B3, B4) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, A3, A4, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, B3, B4, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model AOI222_F(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model AOI222_H(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model AOI222_I(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model AOI2222_F(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _and(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model AOI2222_H(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _and(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model AOI2222_I(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _and(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _and(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _and(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _and(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model BUFFER_C(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_D(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_E(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_F(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_H(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_I(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_J(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_K(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_L(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_M(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_N(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model BUFFER_O(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model CLK_C(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLK_D(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLK_E(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLK_F(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLK_H(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLK_I(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLK_K(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLK_M(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLK_O(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLK_Q(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  output(Z) (primitive = _inv(INT_RES_0, Z);)
+)
+
+model CLKI_C(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+)
+
+model CLKI_D(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+)
+
+model CLKI_E(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+)
+
+model CLKI_F(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+)
+
+model CLKI_H(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+)
+
+model CLKI_I(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+)
+
+model CLKI_K(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+)
+
+model CLKI_M(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+)
+
+model CLKI_O(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+ )
+
+model CLKI_Q(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  intern(INT_RES_0) (primitive = _inv(A, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _inv(INT_RES_0, INT_RES_1);)
+  output(Z) (primitive = _inv(INT_RES_1, Z);)
+)
+
+model COMP2_B(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _xor(A1, B1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _xor(A2, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+
+model COMP2_C(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _xor(A1, B1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _xor(A2, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+  
+model COMP2_D(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _xor(A1, B1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _xor(A2, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+  
+model COMP2_E(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _xor(A1, B1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _xor(A2, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+  
+model COMP2_F(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _xor(A1, B1, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _xor(A2, B2, INT_RES_1);)
+  output(Z) (primitive = _nor(INT_RES_0, INT_RES_1, Z);)
+)
+    
+model DFF_E (D, CLK, Q, QBAR) (
+  input (D, CLK) ()
+  output(Q, QBAR) (primitive = _dff(, , CLK, D, Q, QBAR);)
+)
+
+model DFF_H (D, CLK, Q, QBAR) (
+  input (D, CLK) ()
+  output(Q, QBAR) (primitive = _dff(, , CLK, D, Q, QBAR);)
+)
+
+model DFF_K (D, CLK, Q, QBAR) (
+  input (D, CLK) ()
+  output(Q, QBAR) (primitive = _dff(, , CLK, D, Q, QBAR);)
+)
+
+model DFFR_B (D, CLK, RN, Q, QBAR) (
+  input (D, CLK, RN) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff( ,INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFR_C (D, CLK, RN, Q, QBAR) (
+  input (D, CLK, RN) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff( ,INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFR_D (D, CLK, RN, Q, QBAR) (
+  input (D, CLK, RN) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff( ,INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFR_E (D, CLK, RN, Q, QBAR) (
+  input (D, CLK, RN) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff( ,INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFR_H (D, CLK, RN, Q, QBAR) (
+  input (D, CLK, RN) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff( ,INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFR_K (D, CLK, RN, Q, QBAR) (
+  input (D, CLK, RN) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff( ,INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFS_B (D, CLK, S, Q, QBAR) (
+  input (D, CLK, S) ()
+  output(Q, QBAR) (primitive = _dff(S, , CLK, D, Q, QBAR);)
+)
+
+model DFFS_C (D, CLK, S, Q, QBAR) (
+  input (D, CLK, S) ()
+  output(Q, QBAR) (primitive = _dff(S, , CLK, D, Q, QBAR);)
+)
+
+model DFFS_D (D, CLK, S, Q, QBAR) (
+  input (D, CLK, S) ()
+  output(Q, QBAR) (primitive = _dff(S, , CLK, D, Q, QBAR);)
+)
+
+model DFFS_E (D, CLK, S, Q, QBAR) (
+  input (D, CLK, S) ()
+  output(Q, QBAR) (primitive = _dff(S, , CLK, D, Q, QBAR);)
+)
+
+model DFFS_H (D, CLK, S, Q, QBAR) (
+  input (D, CLK, S) ()
+  output(Q, QBAR) (primitive = _dff(S, , CLK, D, Q, QBAR);)
+)
+
+model DFFS_K (D, CLK, S, Q, QBAR) (
+  input (D, CLK, S) ()
+  output(Q, QBAR) (primitive = _dff(S, , CLK, D, Q, QBAR);)
+)
+
+model DFFSR_B (D, CLK, RN, S, Q, QBAR) (
+  input (D, CLK, RN, S) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff(S, INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFSR_C (D, CLK, RN, S, Q, QBAR) (
+  input (D, CLK, RN, S) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff(S, INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFSR_D (D, CLK, RN, S, Q, QBAR) (
+  input (D, CLK, RN, S) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff(S, INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFSR_E (D, CLK, RN, S, Q, QBAR) (
+  input (D, CLK, RN, S) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff(S, INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFSR_H (D, CLK, RN, S, Q, QBAR) (
+  input (D, CLK, RN, S) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff(S, INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DFFSR_K (D, CLK, RN, S, Q, QBAR) (
+  input (D, CLK, RN, S) ()
+  intern(INT_RES_0) (primitive = _inv(RN, INT_RES_0);)
+  output(Q, QBAR) (primitive = _dff(S, INT_RES_0, CLK, D, Q, QBAR);)
+)
+
+model DELAY4_C(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model DELAY4_F(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model DELAY4_J(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model DELAY6_C(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model DELAY6_F(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model DELAY6_J(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model DELAY6_M(A, Z) (
+  cell_type = BUF;
+  input(A) ()
+  output(Z) (primitive = _buf(A, Z);)
+)
+
+model INVERT_A(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_B(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_C(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_D(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_E(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_F(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_H(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_I(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_J(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_K(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_L(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_M(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_N(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERT_O(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERTBAL_C(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERTBAL_D(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERTBAL_E(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERTBAL_F(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERTBAL_H(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERTBAL_J(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model INVERTBAL_L(A, Z) (
+  cell_type = INV;
+  input(A) ()
+  output(Z) (primitive = _inv(A, Z);)
+)
+
+model LATSRLV_E (D, CLK, RN, S, Q, QBAR) (
+  input (D, CLK, RN, S) ()
+  intern(_R) (primitive = _inv(RN, _R);)
+  output(Q, QBAR) (primitive = _dlat(S, _R, CLK, D, Q, QBAR );)
+)
+
+model LATSRLV_H (D, CLK, RN, S, Q, QBAR) (
+  input (D, CLK, RN, S) ()
+  intern(_R) (primitive = _inv(RN, _R);)
+  output(Q, QBAR) (primitive = _dlat(S, _R, CLK, D, Q, QBAR );)
+)
+
+model LATSRLV_K (D, CLK, RN, S, Q, QBAR) (
+  input (D, CLK, RN, S) ()
+  intern(_R) (primitive = _inv(RN, _R);)
+  output(Q, QBAR) (primitive = _dlat(S, _R, CLK, D, Q, QBAR );)
+)
+
+model MUX21_C(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  output(Z) (primitive = _mux(D0, D1, SD, Z);)
+)
+
+model MUX21_D(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  output(Z) (primitive = _mux(D0, D1, SD, Z);)
+)
+
+model MUX21_E(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  output(Z) (primitive = _mux(D0, D1, SD, Z);)
+)
+
+model MUX21_F(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  output(Z) (primitive = _mux(D0, D1, SD, Z);)
+)
+
+model MUX21_H(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  output(Z) (primitive = _mux(D0, D1, SD, Z);)
+)
+
+model MUX21_I(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  output(Z) (primitive = _mux(D0, D1, SD, Z);)
+)
+
+model MUX21BAL_H(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  output(Z) (primitive = _mux(D0, D1, SD, Z);)
+)
+
+model MUX21BAL_J(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  output(Z) (primitive = _mux(D0, D1, SD, Z);)
+)
+
+model MUX21BAL_L(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  output(Z) (primitive = _mux(D0, D1, SD, Z);)
+)
+
+model MUX21I_B(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  intern(mux1) (primitive = _mux(D0, D1, SD, mux1);)
+  output(Z) (primitive = _inv(mux1, Z);)
+)
+
+model MUX21I_C(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  intern(mux1) (primitive = _mux(D0, D1, SD, mux1);)
+  output(Z) (primitive = _inv(mux1, Z);)
+)
+
+model MUX21I_D(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  intern(mux1) (primitive = _mux(D0, D1, SD, mux1);)
+  output(Z) (primitive = _inv(mux1, Z);)
+)
+
+model MUX21I_E(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  intern(mux1) (primitive = _mux(D0, D1, SD, mux1);)
+  output(Z) (primitive = _inv(mux1, Z);)
+)
+
+model MUX21I_F(D0, D1, SD, Z) (
+  cell_type = MUX SD D0 D1;
+  input(D0, D1, SD) ()
+  intern(mux1) (primitive = _mux(D0, D1, SD, mux1);)
+  output(Z) (primitive = _inv(mux1, Z);)
+)
+
+model MUX41_D(D0, D1, D2, D3, SD1, SD2, Z) (
+  input(D0, D1, D2, D3, SD1, SD2) ()
+  intern(mux0) (primitive = _mux(D0, D1, SD2, mux0);)
+  intern(mux1) (primitive = _mux(D2, D3, SD2, mux1);)
+  output(Z) (primitive = _mux(mux0, mux1, SD1, Z);)
+)
+
+model MUX41_F(D0, D1, D2, D3, SD1, SD2, Z) (
+  input(D0, D1, D2, D3, SD1, SD2) ()
+  intern(mux0) (primitive = _mux(D0, D1, SD2, mux0);)
+  intern(mux1) (primitive = _mux(D2, D3, SD2, mux1);)
+  output(Z) (primitive = _mux(mux0, mux1, SD1, Z);)
+)
+
+model MUX41_J(D0, D1, D2, D3, SD1, SD2, Z) (
+  input(D0, D1, D2, D3, SD1, SD2) ()
+  intern(mux0) (primitive = _mux(D0, D1, SD2, mux0);)
+  intern(mux1) (primitive = _mux(D2, D3, SD2, mux1);)
+  output(Z) (primitive = _mux(mux0, mux1, SD1, Z);)
+)
+
+model NAND2_A(A, B, Z) (
+   cell_type = NAND;
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_B(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_C(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_D(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_E(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_F(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_H(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_I(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_J(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_K(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_L(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2_M(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2BAL_E(A, B, Z) (
+   cell_type = NAND;
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2BAL_H(A, B, Z) (
+   cell_type = NAND;
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2BAL_J(A, B, Z) (
+   cell_type = NAND;
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND2BAL_L(A, B, Z) (
+   cell_type = NAND;
+  input(A, B) ()
+  output(Z) (primitive = _nand(A, B, Z);)
+)
+
+model NAND3_A(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND3_B(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND3_C(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND3_D(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND3_E(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND3_F(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND3_H(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND3_I(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND3_J(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND3_K(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nand(A, B, C, Z);)
+)
+
+model NAND4_A(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nand(A, B, C, D, Z);)
+)
+
+model NAND4_B(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nand(A, B, C, D, Z);)
+)
+model NAND4_C(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nand(A, B, C, D, Z);)
+)
+
+model NAND4_D(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nand(A, B, C, D, Z);)
+)
+
+model NAND4_E(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nand(A, B, C, D, Z);)
+)
+
+model NAND4_F(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nand(A, B, C, D, Z);)
+)
+
+model NOR2_A(A, B, Z) (
+  cell_type = NOR;
+  input(A, B) ()
+  output(Z) (primitive = _nor(A, B, Z);)
+)
+
+model NOR2_B(A, B, Z) (
+  cell_type = NOR;
+  input(A, B) ()
+  output(Z) (primitive = _nor(A, B, Z);)
+)
+
+model NOR2_C(A, B, Z) (
+  cell_type = NOR;
+  input(A, B) ()
+  output(Z) (primitive = _nor(A, B, Z);)
+)
+
+model NOR2_D(A, B, Z) (
+  cell_type = NOR;
+  input(A, B) ()
+  output(Z) (primitive = _nor(A, B, Z);)
+)
+
+model NOR2_E(A, B, Z) (
+  cell_type = NOR;
+  input(A, B) ()
+  output(Z) (primitive = _nor(A, B, Z);)
+)
+
+model NOR2_F(A, B, Z) (
+  cell_type = NOR;
+  input(A, B) ()
+  output(Z) (primitive = _nor(A, B, Z);)
+)
+
+model NOR2_H(A, B, Z) (
+  cell_type = NOR;
+  input(A, B) ()
+  output(Z) (primitive = _nor(A, B, Z);)
+)
+
+model NOR2_I(A, B, Z) (
+  cell_type = NOR;
+  input(A, B) ()
+  output(Z) (primitive = _nor(A, B, Z);)
+)
+
+model NOR2_J(A, B, Z) (
+  cell_type = NOR;
+  input(A, B) ()
+  output(Z) (primitive = _nor(A, B, Z);)
+)
+
+model NOR3_A(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nor(A, B, C, Z);)
+)
+
+model NOR3_B(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nor(A, B, C, Z);)
+)
+
+model NOR3_C(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nor(A, B, C, Z);)
+)
+
+model NOR3_D(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nor(A, B, C, Z);)
+)
+
+model NOR3_E(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nor(A, B, C, Z);)
+)
+
+model NOR3_F(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _nor(A, B, C, Z);)
+)
+
+model NOR4_A(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nor(A, B, C, D, Z);)
+)
+
+model NOR4_B(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nor(A, B, C, D, Z);)
+)
+
+model NOR4_C(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nor(A, B, C, D, Z);)
+)
+
+model NOR4_D(A, B, C, D, Z) (
+  input(A, B, C, D) ()
+  output(Z) (primitive = _nor(A, B, C, D, Z);)
+)
+
+model OA21_B(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _and(INT_RES_0, B, Z);)
+)
+
+model OA21_C(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _and(INT_RES_0, B, Z);)
+)
+
+model OA21_D(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _and(INT_RES_0, B, Z);)
+)
+
+model OA21_E(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _and(INT_RES_0, B, Z);)
+)
+
+model OA21_F(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _and(INT_RES_0, B, Z);)
+)
+
+model OA21_H(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _and(INT_RES_0, B, Z);)
+)
+
+model OA21_I(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _and(INT_RES_0, B, Z);)
+)
+
+model OA21_J(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _and(INT_RES_0, B, Z);)
+)
+
+model OA21_K(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _and(INT_RES_0, B, Z);)
+)
+
+model OA22_B(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OA22_C(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OA22_D(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OA22_E(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OA22_F(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OA22_H(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OA22_I(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OA22_J(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OA22_K(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OA222_B(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model OA222_C(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model OA222_D(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model OA222_E(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model OA222_F(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model OA2222_B(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _or(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model OA2222_C(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _or(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model OA2222_D(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _or(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model OA2222_E(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _or(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model OA2222_F(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _or(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _and(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model OAI21_A(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nand(INT_RES_0, B, Z);)
+)
+
+model OAI21_B(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nand(INT_RES_0, B, Z);)
+)
+
+model OAI21_C(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nand(INT_RES_0, B, Z);)
+)
+
+model OAI21_D(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nand(INT_RES_0, B, Z);)
+)
+
+model OAI21_E(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nand(INT_RES_0, B, Z);)
+)
+
+model OAI21_F(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nand(INT_RES_0, B, Z);)
+)
+
+model OAI21_H(A1, A2, B, Z) (
+  input(A1, A2, B) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  output(Z) (primitive = _nand(INT_RES_0, B, Z);)
+)
+
+model OAI22_A(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OAI22_B(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OAI22_C(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OAI22_D(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OAI22_E(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OAI22_F(A1, A2, B1, B2, Z) (
+  input(A1, A2, B1, B2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, Z);)
+)
+
+model OAI222_E(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model OAI222_H(A1, A2, B1, B2, C1, C2, Z) (
+  input(A1, A2, B1, B2, C1, C2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, INT_RES_2, Z);)
+)
+
+model OAI2222_E(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _or(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model OAI2222_H(A1, A2, B1, B2, C1, C2, D1, D2, Z) (
+  input(A1, A2, B1, B2, C1, C2, D1, D2) ()
+  intern(INT_RES_0) (primitive = _or(A1, A2, INT_RES_0);)
+  intern(INT_RES_1) (primitive = _or(B1, B2, INT_RES_1);)
+  intern(INT_RES_2) (primitive = _or(C1, C2, INT_RES_2);)
+  intern(INT_RES_3) (primitive = _or(D1, D2, INT_RES_3);)
+  output(Z) (primitive = _nand(INT_RES_0, INT_RES_1, INT_RES_2, INT_RES_3, Z);)
+)
+
+model OR2_B(A, B, Z) (
+  cell_type = OR;
+  input(A, B) ()
+  output(Z) (primitive = _or(A, B, Z);)
+)
+
+model OR2_C(A, B, Z) (
+  cell_type = OR;
+  input(A, B) ()
+  output(Z) (primitive = _or(A, B, Z);)
+)
+
+model OR2_D(A, B, Z) (
+  cell_type = OR;
+  input(A, B) ()
+  output(Z) (primitive = _or(A, B, Z);)
+)
+
+model OR2_E(A, B, Z) (
+  cell_type = OR;
+  input(A, B) ()
+  output(Z) (primitive = _or(A, B, Z);)
+)
+
+model OR2_F(A, B, Z) (
+  cell_type = OR;
+  input(A, B) ()
+  output(Z) (primitive = _or(A, B, Z);)
+)
+
+model OR2_H(A, B, Z) (
+  cell_type = OR;
+  input(A, B) ()
+  output(Z) (primitive = _or(A, B, Z);)
+)
+
+model OR2_I(A, B, Z) (
+  cell_type = OR;
+  input(A, B) ()
+  output(Z) (primitive = _or(A, B, Z);)
+)
+
+model OR2_J(A, B, Z) (
+  cell_type = OR;
+  input(A, B) ()
+  output(Z) (primitive = _or(A, B, Z);)
+)
+
+model OR2_K(A, B, Z) (
+  cell_type = OR;
+  input(A, B) ()
+  output(Z) (primitive = _or(A, B, Z);)
+)
+
+model OR3_B(A, B, C, Z) (
+  cell_type = OR;
+  input(A, B, C) ()
+  output(Z) (primitive = _or(A, B, C, Z);)
+)
+
+model OR3_C(A, B, C, Z) (
+  cell_type = OR;
+  input(A, B, C) ()
+  output(Z) (primitive = _or(A, B, C, Z);)
+)
+
+model OR3_D(A, B, C, Z) (
+  cell_type = OR;
+  input(A, B, C) ()
+  output(Z) (primitive = _or(A, B, C, Z);)
+)
+
+model OR3_E(A, B, C, Z) (
+  cell_type = OR;
+  input(A, B, C) ()
+  output(Z) (primitive = _or(A, B, C, Z);)
+)
+
+model OR3_F(A, B, C, Z) (
+  cell_type = OR;
+  input(A, B, C) ()
+  output(Z) (primitive = _or(A, B, C, Z);)
+)
+
+model OR3_H(A, B, C, Z) (
+  cell_type = OR;
+  input(A, B, C) ()
+  output(Z) (primitive = _or(A, B, C, Z);)
+)
+
+model OR3_I(A, B, C, Z) (
+  cell_type = OR;
+  input(A, B, C) ()
+  output(Z) (primitive = _or(A, B, C, Z);)
+)
+
+model OR3_J(A, B, C, Z) (
+  cell_type = OR;
+  input(A, B, C) ()
+  output(Z) (primitive = _or(A, B, C, Z);)
+)
+
+model OR3_K(A, B, C, Z) (
+  cell_type = OR;
+  input(A, B, C) ()
+  output(Z) (primitive = _or(A, B, C, Z);)
+)
+
+model OR4_B(A, B, C, D, Z) (
+  cell_type = OR;
+  input(A, B, C, D) ()
+  output(Z) (primitive = _or(A, B, C, D, Z);)
+)
+
+model OR4_C(A, B, C, D, Z) (
+  cell_type = OR;
+  input(A, B, C, D) ()
+  output(Z) (primitive = _or(A, B, C, D, Z);)
+)
+
+model OR4_D(A, B, C, D, Z) (
+  cell_type = OR;
+  input(A, B, C, D) ()
+  output(Z) (primitive = _or(A, B, C, D, Z);)
+)
+
+model OR4_E(A, B, C, D, Z) (
+  cell_type = OR;
+  input(A, B, C, D) ()
+  output(Z) (primitive = _or(A, B, C, D, Z);)
+)
+
+model OR4_F(A, B, C, D, Z) (
+  cell_type = OR;
+  input(A, B, C, D) ()
+  output(Z) (primitive = _or(A, B, C, D, Z);)
+)
+
+model OR4_H(A, B, C, D, Z) (
+  cell_type = OR;
+  input(A, B, C, D) ()
+  output(Z) (primitive = _or(A, B, C, D, Z);)
+)
+
+model OR4_I(A, B, C, D, Z) (
+  cell_type = OR;
+  input(A, B, C, D) ()
+  output(Z) (primitive = _or(A, B, C, D, Z);)
+)
+
+model OR4_J(A, B, C, D, Z) (
+  cell_type = OR;
+  input(A, B, C, D) ()
+  output(Z) (primitive = _or(A, B, C, D, Z);)
+)
+
+model OR4_K(A, B, C, D, Z) (
+  cell_type = OR;
+  input(A, B, C, D) ()
+  output(Z) (primitive = _or(A, B, C, D, Z);)
+)
+
+model SDFF_E (D, CLK, SI, SE, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFF_E (D, CLK, Q, QBAR);
+  )
+  input (D, CLK, SI, SE) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff( , , CLK, _D, Q, QBAR);)
+)
+
+model SDFF_H (D, CLK, SI, SE, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFF_H (D, CLK, Q, QBAR);
+  )
+  input (D, CLK, SI, SE) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff( , , CLK, _D, Q, QBAR);)
+)
+
+model SDFF_K (D, CLK, SI, SE, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFF_K (D, CLK, Q, QBAR);
+  )
+  input (D, CLK, SI, SE) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff( , , CLK, _D, Q, QBAR);)
+)
+
+model SDFFR_B (D, CLK, SI, SE, RN, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFR_B (D, CLK, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  intern(_R) (primitive = _inv (RN, _R); )
+  output(Q, QBAR) (primitive = _dff( , _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFR_C (D, CLK, SI, SE, RN, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFR_C (D, CLK, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  intern(_R) (primitive = _inv (RN, _R); )
+  output(Q, QBAR) (primitive = _dff( , _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFR_D (D, CLK, SI, SE, RN, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFR_D (D, CLK, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  intern(_R) (primitive = _inv (RN, _R); )
+  output(Q, QBAR) (primitive = _dff( , _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFR_E (D, CLK, SI, SE, RN, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFR_E (D, CLK, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  intern(_R) (primitive = _inv (RN, _R); )
+  output(Q, QBAR) (primitive = _dff( , _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFR_H (D, CLK, SI, SE, RN, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFR_H (D, CLK, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  intern(_R) (primitive = _inv (RN, _R); )
+  output(Q, QBAR) (primitive = _dff( , _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFR_K (D, CLK, SI, SE, RN, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFR_K (D, CLK, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN) ()
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  intern(_R) (primitive = _inv (RN, _R); )
+  output(Q, QBAR) (primitive = _dff( , _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFS_B (D, SI, SE, CLK, S, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFS_B (D, CLK, S, Q, QBAR);
+  )
+  input (D, SI, SE, CLK, S) ()
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, , CLK, _D, Q, QBAR);)
+)
+
+model SDFFS_C (D, CLK, SI, SE, S, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFS_C (D, CLK, S, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, S) ()
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, , CLK, _D, Q, QBAR);)
+)
+
+model SDFFS_D (D, CLK, SI, SE, S, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFS_D (D, CLK, S, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, S) ()
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, , CLK, _D, Q, QBAR);)
+)
+
+model SDFFS_E (D, CLK, SI, SE, S, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFS_E (D, CLK, S, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, S) ()
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, , CLK, _D, Q, QBAR);)
+)
+
+model SDFFS_H (D, CLK, SI, SE, S, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFS_H (D, CLK, S, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, S) ()
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, , CLK, _D, Q, QBAR);)
+)
+
+model SDFFS_K (D, CLK, SI, SE, S, Q, QBAR) (
+  scan_definition (
+    type = mux_scan;
+    data_in = D;
+    scan_in = SI;
+    scan_enable = SE;
+    scan_out = Q, QBAR;
+    non_scan_model = DFFS_K (D, CLK, S, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, S) ()
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, , CLK, _D, Q, QBAR);)
+)
+
+model SDFFSR_B (D, CLK, SI, SE, RN, S, Q, QBAR) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QBAR;
+    non_scan_model = DFFSR_B (D, CLK, S, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN, S) ()
+  intern(_R) (primitive  = _inv(RN, _R);)
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFSR_C (D, CLK, SI, SE, RN, S, Q, QBAR) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QBAR;
+    non_scan_model = DFFSR_C (D, CLK, S, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN, S) ()
+  intern(_R) (primitive  = _inv(RN, _R);)
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFSR_D (D, CLK, SI, SE, RN, S, Q, QBAR) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QBAR;
+    non_scan_model = DFFSR_D (D, CLK, S, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN, S) ()
+  intern(_R) (primitive  = _inv(RN, _R);)
+  intern(_D) (primitive = _mux (D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFSR_E (D, CLK, SI, SE, RN, S, Q, QBAR) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QBAR;
+    non_scan_model = DFFSR_E (D, CLK, S, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN, S) ()
+  intern(_R) (primitive  = _inv(RN, _R);)
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFSR_H (D, CLK, SI, SE, RN, S, Q, QBAR) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QBAR;
+    non_scan_model = DFFSR_H (D, CLK, S, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN, S) ()
+  intern(_R) (primitive  = _inv(RN, _R);)
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, _R, CLK, _D, Q, QBAR);)
+)
+
+model SDFFSR_K (D, CLK, SI, SE, RN, S, Q, QBAR) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QBAR;
+    non_scan_model = DFFSR_K (D, CLK, S, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN, S) ()
+  intern(_R) (primitive  = _inv(RN, _R);)
+  intern(_D) (primitive = _mux(D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dff(S, _R, CLK, _D, Q, QBAR);)
+)
+
+model SLATSRLV_E (D, CLK, SI, SE, RN, S, Q, QBAR) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QBAR;
+    non_scan_model = LATSRLV_E (D, CLK, S, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN, S) ()
+  intern(_R) (primitive  = _inv (RN, _R);)
+  intern(_D) (  primitive = _mux (D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dlat (S, _R, CLK, _D, Q, QBAR);)
+)
+
+model SLATSRLV_H (D, CLK, SI, SE, RN, S, Q, QBAR) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QBAR;
+    non_scan_model = LATSRLV_H (D, CLK, S, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN, S) ()
+  intern(_R) (primitive  = _inv (RN, _R);)
+  intern(_D) (  primitive = _mux (D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dlat (S, _R, CLK, _D, Q, QBAR);)
+)
+
+model SLATSRLV_K (D, CLK, SI, SE, RN, S, Q, QBAR) (
+  scan_definition (
+    type  = mux_scan;
+    data_in     = D;
+    scan_in     = SI;
+    scan_enable = SE;
+    scan_out    = Q, QBAR;
+    non_scan_model = LATSRLV_K (D, CLK, S, RN, Q, QBAR);
+  )
+  input (D, CLK, SI, SE, RN, S) ()
+  intern(_R) (primitive  = _inv (RN, _R);)
+  intern(_D) (  primitive = _mux (D, SI, SE, _D);)
+  output(Q, QBAR) (primitive = _dlat (S, _R, CLK, _D, Q, QBAR);)
+)
+
+model XNOR2_A(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _xnor(A, B, Z);)
+)
+
+model XNOR2_B(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _xnor(A, B, Z);)
+)
+
+model XNOR2_C(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _xnor(A, B, Z);)
+)
+
+model XNOR2_D(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _xnor(A, B, Z);)
+)
+
+model XNOR2_E(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _xnor(A, B, Z);)
+)
+
+model XNOR2_F(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _xnor(A, B, Z);)
+)
+
+model XNOR2_H(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _xnor(A, B, Z);)
+)
+
+model XNOR2_I(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _xnor(A, B, Z);)
+)
+
+model XNOR2_J(A, B, Z) (
+  input(A, B) ()
+  output(Z) (primitive = _xnor(A, B, Z);)
+)
+
+model XNOR3_B(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _xnor(A, B, C, Z);)
+)
+
+model XNOR3_C(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _xnor(A, B, C, Z);)
+)
+
+model XNOR3_D(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _xnor(A, B, C, Z);)
+)
+
+model XNOR3_E(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _xnor(A, B, C, Z);)
+)
+
+model XNOR3_F(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _xnor(A, B, C, Z);)
+)
+
+model XNOR3_H(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _xnor(A, B, C, Z);)
+)
+
+model XNOR3_I(A, B, C, Z) (
+  input(A, B, C) ()
+  output(Z) (primitive = _xnor(A, B, C, Z);)
+)
+
+model XOR2_A(A, B, Z) (
+  cell_type = XOR;
+  input(A, B) ()
+  output(Z) (primitive = _xor(A, B, Z);)
+)
+
+model XOR2_B(A, B, Z) (
+  cell_type = XOR;
+  input(A, B) ()
+  output(Z) (primitive = _xor(A, B, Z);)
+)
+
+model XOR2_C(A, B, Z) (
+  cell_type = XOR;
+  input(A, B) ()
+  output(Z) (primitive = _xor(A, B, Z);)
+)
+
+model XOR2_D(A, B, Z) (
+  cell_type = XOR;
+  input(A, B) ()
+  output(Z) (primitive = _xor(A, B, Z);)
+)
+
+model XOR2_E(A, B, Z) (
+  cell_type = XOR;
+  input(A, B) ()
+  output(Z) (primitive = _xor(A, B, Z);)
+)
+
+model XOR2_F(A, B, Z) (
+  cell_type = XOR;
+  input(A, B) ()
+  output(Z) (primitive = _xor(A, B, Z);)
+)
+
+model XOR2_H(A, B, Z) (
+  cell_type = XOR;
+  input(A, B) ()
+  output(Z) (primitive = _xor(A, B, Z);)
+)
+
+model XOR2_I(A, B, Z) (
+  cell_type = XOR;
+  input(A, B) ()
+  output(Z) (primitive = _xor(A, B, Z);)
+)
+
+model XOR2_J(A, B, Z) (
+  cell_type = XOR;
+  input(A, B) ()
+  output(Z) (primitive = _xor(A, B, Z);)
+)
+
+model XOR3_B(A, B, C, Z) (
+  cell_type = XOR;
+  input(A, B, C) ()
+  output(Z) (primitive = _xor(A, B, C, Z);)
+)
+
+model XOR3_C(A, B, C, Z) (
+  cell_type = XOR;
+  input(A, B, C) ()
+  output(Z) (primitive = _xor(A, B, C, Z);)
+)
+model XOR3_D(A, B, C, Z) (
+  cell_type = XOR;
+  input(A, B, C) ()
+  output(Z) (primitive = _xor(A, B, C, Z);)
+)
+model XOR3_E(A, B, C, Z) (
+  cell_type = XOR;
+  input(A, B, C) ()
+  output(Z) (primitive = _xor(A, B, C, Z);)
+)
+model XOR3_F(A, B, C, Z) (
+  cell_type = XOR;
+  input(A, B, C) ()
+  output(Z) (primitive = _xor(A, B, C, Z);)
+)
+model XOR3_H(A, B, C, Z) (
+  cell_type = XOR;
+  input(A, B, C) ()
+  output(Z) (primitive = _xor(A, B, C, Z);)
+)
+model XOR3_I(A, B, C, Z) (
+  cell_type = XOR;
+  input(A, B, C) ()
+  output(Z) (primitive = _xor(A, B, C, Z);)
+)
+
+model TIE0_D(Z)(
+      output(Z) (primitive = _tie0(Z);)
+)
+
+model TIE1_D(Z)(
+      output(Z) (primitive = _tie1(Z);)
+)
+ 
+// Add VCC and GROUND.
+ 
+alias supply1 fake_vcc 
+alias VCC fake_vcc 
+model fake_vcc(Y)(
+      output(Y) (primitive = _tie1(Y);)
+)
+ 
+alias supply0 fake_gnd 
+alias GND fake_gnd 
+model fake_gnd(Y)(
+       output(Y) (primitive = _tie0(Y);)
+)
+ 
+
+// ===============================================
+//      Clock gating circuits
+// ==============================================
+model clock_gate_and (CLKEN, TEN, CLK, CLK_OUT) (
+  input (CLKEN, CLK, TEN) ()
+  intern (CLKi)      (primitive = _inv i01 (CLK, CLKi);)
+  intern (CLKEN_TEN) (primitive = _nor i02 (CLKEN, TEN, CLKEN_TEN);)
+  intern (CLKQB)     (primitive = _dlat i03 (, , CLKi, CLKEN_TEN, , CLKQB);)
+  output (CLK_OUT)   (primitive = _and i04 (CLKQB, CLK, CLK_OUT);)
+)
+
+model clock_gate_or (CLKEN, TEN, CLK, CLK_OUT) (
+  input (CLKEN, CLK, TEN) ()
+  intern (CLKi)      (primitive = _inv i01 (CLK, CLKi);)
+  intern (CLKEN_TEN) (primitive = _nor i02 (CLKEN, TEN, CLKEN_TEN);)
+  intern (CLKQB)     (primitive = _dlat i03 (, , CLKi, CLKEN_TEN, , CLKQB);)
+  output (CLK_OUT)   (primitive = _or i04 (CLKQB, CLK, CLK_OUT);)
+)
+
+// ===============================================
+//      Simple Ram  1x4
+// ==============================================
+model ramV01_1x4 (clk,      wen, addr, din, dout) (
+//  input(ren)  ()
+  input(wen)  ()
+  input(clk)  ()
+  input(addr) (array = 3:0;)
+  input(din)  ()
+  output(dout) (
+      data_size = 1;
+      address_size = 4;
+      primitive = _cram (,,
+          _read{, , ,H}( , clk,   ,addr,dout),
+          _write{H,H,H}(   clk,wen,addr,din));
+      )
+)
+
+// ===============================================
+//      Simple Ram  4x4
+// ==============================================
+model ramV01_4x4 (clk, ren, wen, addr, din, dout) (
+  input(ren, wen) ()
+  input(clk)()
+  input(addr) (array = 3:0;)
+  input(din) (array = 3:0;)
+  output(dout) (
+      array = 3:0;
+      data_size = 4;
+      address_size = 4;
+      primitive = _cram (,,
+          _read{,H,H,H}( , clk,ren,addr,dout),
+          _write{H,H,H}(clk,wen,addr,din));
+      )
+)
+
+// ===============================================
+//      Simple Ram  8x8
+// ==============================================
+model ramV01_8x8 (clk, ren, wen, addr, din, dout) (
+  input(ren, wen) ()
+  input(clk)()
+  input(addr) (array = 7:0;)
+  input(din) (array = 7:0;)
+  output(dout) (
+      array = 7:0;
+      data_size = 8;
+      address_size = 8;
+      primitive = _cram (,,
+          _read{,H,H,H}( , clk,ren,addr,dout),
+          _write{H,H,H}(clk,wen,addr,din));
+      )
+)
+
+// ===============================================
+//      Simple Ram  32x4 
+// ==============================================
+model ramV01_32x4 (clk, addr, wen, din, dout ) (
+  input(clk, wen) ()
+  input(addr) (array = 3:0;)
+  input(din) (array = 31:0;)
+  output(dout) (
+      array = 31:0;
+      data_size = 32;
+      address_size = 4;
+      edge_trigger = rw;
+      primitive = _cram(,,
+          _read{,,,H}(,clk, , addr, dout),
+          _write{H,H,H}(clk, wen, addr, din));
+      )
+)
+
+// ==========================================================
+//      Dual Port Ram  2X(4 bit DataIn) 2X(4 bit Address).
+//      Dual data out. 
+// =========================================================
+model ram_2port_V01_4x4 (clk, ren, wenA, addA, dinA, wenB, addB, dinB, dout) (
+  input(ren, wenA, wenB) ()
+  input(clk)()
+  input(addA) (array = 3:0;)
+  input(addB) (array = 3:0;)
+  input(dinA) (array = 3:0;)
+  input(dinB) (array = 3:0;)
+  output(dout) (
+      array = 3:0;
+      data_size = 4;
+      address_size = 4;
+      primitive = _cram (,,
+          _read{,H,H,H}( , clk,ren,addA,dout),
+          _write{H,H,H}(clk,wenA,addA,dinA),
+          _write{H,H,H}(clk,wenB,addB,dinB));
+      )
+)
+
+
+model ram_bitWr_V01_4x4 (clk, wen, addr, din, dout) (
+  input(wen)  (array = 3:0;)
+  input(clk)  ()
+  input(addr) (array = 3:0;)
+  input(din)  (array = 3:0;)
+  output(dout) (
+      array = 3:0;
+      instance = ramV01_1x4 bit0 (clk, wen<0>, addr, din<0>, dout<0>);
+      instance = ramV01_1x4 bit1 (clk, wen<1>, addr, din<1>, dout<1>);
+      instance = ramV01_1x4 bit2 (clk, wen<2>, addr, din<2>, dout<2>);
+      instance = ramV01_1x4 bit3 (clk, wen<3>, addr, din<3>, dout<3>);
+  )
+)
+

@@ -1,0 +1,26 @@
+SETUP =
+declare input bus "PI" = "/A", "/B", "/C", "/D";
+declare output bus "PO"= "/Y";
+end;
+SCAN_TEST = 
+       pattern = 0;
+       force "PI" "1011" 0;
+       measure "PO" "1" 1;
+      
+      pattern = 1;
+      force  "PI" "1000" 0;
+      measure "PO" "0" 1;
+    
+       pattern = 2;
+      force  "PI" "0110" 0;
+      measure "PO" "1" 1;
+  
+       pattern = 3;
+      force  "PI" "0011" 0;
+      measure "PO" "0" 1;
+  
+      pattern = 4;
+      force  "PI" "0101" 0;
+      measure "PO" "1" 1;
+
+end;

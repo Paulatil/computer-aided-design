@@ -1,0 +1,21 @@
+           Statistics Report          
+            Stuck-at Faults           
+--------------------------------------
+Fault Classes              #faults    
+                           (total)    
+---------------------  ---------------
+  FU (full)                   38      
+  -------------------  ---------------
+  DS (det_simulation)     38 (100.00%)
+--------------------------------------
+Coverage                              
+  -------------------                 
+  test_coverage               100.00% 
+  fault_coverage              100.00% 
+  atpg_effectiveness          100.00% 
+--------------------------------------
+#test_patterns                      5 
+#simulated_patterns                64 
+CPU_time (secs)                   0.1 
+--------------------------------------
+
